@@ -1,0 +1,18 @@
+{% extends "adminuser/layout.html" %}
+
+{% block body %}
+    <style>
+        .data{
+            padding: 5%;
+            margin-left: 35%;
+        }
+    </style>
+    <div class="data">
+        <h4>Apps Downloaded by {{ user.username }}</h4>
+        <ul>
+            {% for app in user.apps.all %}
+                <li>{{ app.app }} - {{ app.points }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
